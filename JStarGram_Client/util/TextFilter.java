@@ -11,10 +11,7 @@ public class TextFilter {
     public TextFilter() {
         badWordList = new ArrayList<>();
         
-        badWordList.add("씨발");
-        badWordList.add("존나");
-        badWordList.add("새끼");
-        badWordList.add("병신");
+        badWordList.add("비속어");     // 실제 비속어로 넣기
     }
 
     public String filter(String inputMessage) {
