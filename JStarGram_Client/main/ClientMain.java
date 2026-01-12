@@ -8,8 +8,8 @@ public class ClientMain {
 	
 	public static ClientService clientService;
     
-    // [중요] 현재 로그인한 사용자 정보를 저장하는 필드
-    // 이 정보가 있어야 게시자(Me -> 닉네임) 및 좋아요 1개 제한(ID) 기능이 동작합니다.
+    // 현재 로그인한 사용자 정보를 저장하는 필드
+    // 이 정보로 있어야 게시자(Me -> 닉네임) 및 좋아요 1개 제한(ID) 기능이 동작
     public static String currentUserId;
     public static String currentUserNickname;
 
