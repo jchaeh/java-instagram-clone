@@ -90,7 +90,7 @@ public class ClientService {
             	ClientMain.currentUserId = response.getId();
             	ClientMain.currentUserNickname = response.getName();
             	
-            	// [핵심] 로그인 성공 시 나의 상태(Presence)를 서버로 전송!
+            	// 로그인 성공 시 나의 상태(Presence)를 서버로 전송!
             	sendMyPresence();
             	
             	return response.getName(); 
@@ -99,7 +99,7 @@ public class ClientService {
         } catch (Exception e) { return null; }
     }
 
-    // [수정] 내 접속 상태 및 위치 전송
+    // 내 접속 상태 및 위치 전송
     private void sendMyPresence() {
         PresenceInfo myInfo = new PresenceInfo(ClientMain.currentUserId, ClientMain.currentUserNickname);
         myInfo.setOnline(true);
@@ -118,7 +118,7 @@ public class ClientService {
         } catch (IOException e) { e.printStackTrace(); }
     }
     
-    // [추가] 방 생성 요청
+    // 방 생성 요청
     public void sendCreateRoom(String roomName) {
         try {
             out.writeObject("CREATE_ROOM|" + roomName);
