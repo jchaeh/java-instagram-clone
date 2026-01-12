@@ -4,10 +4,9 @@ import java.util.ArrayList;
 
 public class TextFilter {
 
-    // 욕설 목록 리스트 (여기에 단어를 추가하면)
+    // 욕설 목록 리스트
     private ArrayList<String> badWordList;
-
-    // 여기에 추가해요
+    
     public TextFilter() {
         badWordList = new ArrayList<>();
         
