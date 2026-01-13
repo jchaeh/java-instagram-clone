@@ -46,7 +46,7 @@ public class JoinUI extends JDialog {
 		add(btnCancel);
 		
 		// 3. 기능 연결
-		// [가입완료 버튼]
+		// 가입완료 버튼
 		btnSubmit.addActionListener(e -> {
 			// 입력값 가져오기 (공백 제거)
 			String id = txtId.getText().trim();
@@ -60,10 +60,10 @@ public class JoinUI extends JDialog {
 				return;
 			}
 			
-			// [디버깅] 전송 로그 출력
+			// 전송 로그 출력
 			System.out.println("[클라이언트] 회원가입 요청 -> ID: " + id + ", Name: " + name);
 			
-			// ★ 서버로 회원가입 요청 보내기 (ClientService 사용)
+			// 서버로 회원가입 요청 보내기 (ClientService 사용)
 			boolean isSuccess = ClientMain.clientService.join(id, pw, name, phone);
 			
 			if (isSuccess) {
@@ -75,7 +75,7 @@ public class JoinUI extends JDialog {
 			}
 		});
 		
-		// [취소 버튼]
+		// 취소 버튼
 		btnCancel.addActionListener(e -> dispose());
 
 		// 화면 중앙 배치
