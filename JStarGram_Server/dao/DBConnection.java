@@ -5,13 +5,11 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 	
-	// 1. MySQL 접속 정보
+	// MySQL 접속 정보
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/jstargram?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8";
 	private static final String DB_ID = "root"; // 아이디 (보통 root)
 	
-	// [중요] 여기에 본인 MySQL 비밀번호를 정확히 적어야 합니다!
-	// 예: "1234", "root", "1111" 등 본인이 설정한 값으로 변경하세요.
-	private static final String DB_PW = "531cyhmw"; 
+	private static final String DB_PW = "password";  //  본인의 MySQL 비밀번호 
 	
 	public static Connection getConnection() {
 		Connection conn = null;
