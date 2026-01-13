@@ -55,7 +55,7 @@ public class FeedPanel extends JPanel {
         deleteBtn.addActionListener(e -> {
         	int confirm = JOptionPane.showConfirmDialog(this, "정말 이 글을 삭제하시겠습니까?", "삭제 확인", JOptionPane.YES_NO_OPTION);
         	if(confirm == JOptionPane.YES_OPTION) {
-        		// [핵심 수정] 로컬 삭제 대신 서버로 요청을 보냄
+        		// 로컬 삭제 대신 서버로 요청을 보냄
         		ClientMain.clientService.sendDeleteRequest(postId);
         	}
         });
