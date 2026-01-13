@@ -2,6 +2,8 @@ package com.jstargram.common.dto;
 
 import java.io.Serializable;
 
+// [중요] 이 파일은 Server와 Client 양쪽 프로젝트에 모두 있어야 합니다!
+// com.jstargram.common.dto 패키지에 넣어주세요.
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -29,6 +31,7 @@ public class UserDTO implements Serializable {
 		this.phone = phone;
 	}
 
+	// [이 Getter/Setter 메서드들이 있어야 UserDAO에서 에러가 안 납니다!]
 	public int getCommand() { return command; }
 	public void setCommand(int command) { this.command = command; }
 	
