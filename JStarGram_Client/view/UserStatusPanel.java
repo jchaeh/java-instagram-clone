@@ -10,22 +10,21 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import com.jstargram.common.dto.PresenceInfo;
 
-// [수정] PhotoBoardUI가 이 역할을 겸하므로, PhotoBoardUI를 받도록 수정합니다.
 public class UserStatusPanel extends JPanel {
 
-    private final PhotoBoardUI mainWindow; // [수정] MainWindow -> PhotoBoardUI로 변경
+    private final PhotoBoardUI mainWindow; 
 
     private JTable userTable;
     private DefaultTableModel tableModel;
     private JLabel locationLabel;
-    private JButton openMapButton;      // ★ 카카오 지도 열기 버튼
-    private String currentMapUrl = null; // ★ 현재 선택된 유저의 지도 URL
+    private JButton openMapButton;      // 카카오 지도 열기 버튼
+    private String currentMapUrl = null; // 현재 선택된 유저의 지도 URL
 
 
     // userId -> PresenceInfo
     private Map<String, PresenceInfo> presenceMap = new LinkedHashMap<>();
 
-    public UserStatusPanel(PhotoBoardUI mainWindow) { // [수정] 생성자 타입 변경
+    public UserStatusPanel(PhotoBoardUI mainWindow) {
         this.mainWindow = mainWindow;
         initUI();
     }
