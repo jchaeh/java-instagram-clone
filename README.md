@@ -19,9 +19,9 @@ Java와 Eclipse를 사용해 제작한 Instagram 클론 SNS 팀 프로젝트입�
 ---
 
 ##  Project Structure
-java-instagram-clone
-├── JStarGram_Client # 클라이언트(화면/UI + 기능 호출)
-├── JStarGram_Server # 서버(요청 처리/데이터 관리)
+java-instagram-clone 
+├── JStarGram_Client # 클라이언트(화면/UI + 기능 호출) 
+├── JStarGram_Server # 서버(요청 처리/데이터 관리) 
 └── JStarGram_Comon/dto # 공통 DTO(클라-서버 통신 데이터 포맷)
 
 
