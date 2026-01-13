@@ -26,7 +26,7 @@ java-instagram-clone
 
 ---
 
-## 🛠 Tech Stack / Environment
+## Tech Stack / Environment
 - Java
 - Eclipse IDE
 - (통신) Socket 기반 네트워크
