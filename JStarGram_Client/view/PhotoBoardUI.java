@@ -82,9 +82,7 @@ public class PhotoBoardUI extends JFrame implements ChatListener {
         cardLayout.show(rootPanel, CARD_FEED);
     }
 
-    // =========================================================
-    // A. 피드 관련 UI
-    // =========================================================
+    // 1. 피드 관련 UI
 
     private JPanel createFeedScreen() {
         JPanel panel = new JPanel(new BorderLayout());
@@ -143,9 +141,7 @@ public class PhotoBoardUI extends JFrame implements ChatListener {
         feedContainer.repaint();
     }
 
-    // =========================================================
-    // B. 채팅 관련 UI
-    // =========================================================
+    // 2. 채팅 관련 UI
 
     /** 채팅 목록 화면 생성 */
     private JPanel createRoomListScreen() {
@@ -188,7 +184,7 @@ public class PhotoBoardUI extends JFrame implements ChatListener {
         JButton enterBtn = new JButton("입장");
         enterBtn.addActionListener(e -> enterSelectedRoom());
         
-        // [추가] 방 만들기 버튼
+        // 방 만들기 버튼
         JButton createRoomBtn = new JButton("+ 방 만들기");
         createRoomBtn.setBackground(new Color(200, 255, 200));
         createRoomBtn.setOpaque(true);
@@ -307,9 +303,7 @@ public class PhotoBoardUI extends JFrame implements ChatListener {
         // TODO: 서버에 상태 요청 로직 구현
     }
 
-    // =========================================================
-    // C. 카드 전환 메서드
-    // =========================================================
+    // 3. 카드 전환 메서드
 
     public void showFeedScreen() { cardLayout.show(rootPanel, CARD_FEED); }
     public void showRoomList() { cardLayout.show(rootPanel, CARD_LIST); }
@@ -319,9 +313,7 @@ public class PhotoBoardUI extends JFrame implements ChatListener {
         cardLayout.show(rootPanel, CARD_STATUS);
     }
 
-    // =========================================================
-    // D. ChatListener 구현 (서버 응답 수신)
-    // =========================================================
+    // 4. ChatListener 구현 (서버 응답 수신)
     
     @Override
     public void onMessageReceived(ChatMessage message) {
@@ -384,9 +376,7 @@ public class PhotoBoardUI extends JFrame implements ChatListener {
         });
     }
 
-    // =========================================================
-    // E. 피드/채팅 공통 (서버 브로드캐스트 핸들러)
-    // =========================================================
+    // 5. 피드/채팅 공통 (서버 브로드캐스트 핸들러)
 
     public void handleBroadcast(String msg) {
         String[] parts = msg.split("\\|");
