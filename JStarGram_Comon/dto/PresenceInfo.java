@@ -13,7 +13,7 @@ public class PresenceInfo implements Serializable {
     private String lastSeenText;   // "5분 전", "2시간 전" 등
     private String locationText;   // "서울시 강남구 ..." 등
 
-    // ★ 지도용 좌표
+    // 지도용 좌표
     private Double latitude;       // 위도
     private Double longitude;      // 경도
 
