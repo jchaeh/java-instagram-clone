@@ -14,7 +14,7 @@ public class ServerMain {
             serverSocket = new ServerSocket();
             serverSocket.setReuseAddress(true);
             
-            // [중요] "0.0.0.0"은 "모든 IP에서의 접속을 허용한다"는 뜻입니다.
+            // 모든 IP에서의 접속을 허용
             serverSocket.bind(new InetSocketAddress("0.0.0.0", PORT)); 
             
             System.out.println("[서버 시작] 모든 IP에서 9999번 포트 접속 대기 중...");
