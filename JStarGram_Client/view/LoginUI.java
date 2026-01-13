@@ -77,10 +77,10 @@ public class LoginUI extends JFrame {
 			
 			System.out.println("[클라이언트] 로그인 시도 -> ID: " + id);
 			
-			// [수정] String 타입으로 닉네임을 받습니다. (오류 해결)
+			// String 타입으로 닉네임을 받기
 			String nickname = ClientMain.clientService.login(id, pw); 
 
-			// [수정] 닉네임이 null이 아니면(즉, String 값이 있으면) 성공 처리
+			// 닉네임이 null이 아니면(즉, String 값이 있으면) 성공 처리
 			if (nickname != null) {
 				JOptionPane.showMessageDialog(this, nickname + "님 환영합니다!");
 				dispose(); 
