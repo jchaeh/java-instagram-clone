@@ -7,7 +7,7 @@ import com.jstargram.common.dto.UserDTO;
 
 public class UserDAO {
 
-	// 1. 회원가입 기능
+	// 회원가입 기능
 	public boolean join(UserDTO user) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -16,7 +16,7 @@ public class UserDAO {
 		try {
 			conn = DBConnection.getConnection(); 
 			
-			// [중요] 자동 저장을 끄고 수동으로 제어함 (확실하게 하기 위해)
+			// 자동 저장을 끄고 수동으로 제어함
 			conn.setAutoCommit(false);
 			
 			String sql = "INSERT INTO user_tb (id, password, name, phone, status_msg) VALUES (?, ?, ?, ?, ?)";
@@ -31,7 +31,7 @@ public class UserDAO {
 			int result = pstmt.executeUpdate(); 
 			
 			if(result > 0) {
-				conn.commit(); // "저장해!!" 하고 도장 쾅 찍기
+				conn.commit(); // 저장
 				isSuccess = true;
 				System.out.println("[DB] 회원가입 데이터 저장 완료(Commit): " + user.getId());
 			} else {
@@ -50,8 +50,8 @@ public class UserDAO {
 		return isSuccess;
 	}
 	
-	// 2. 로그인 기능
-    // [수정] boolean 대신 UserDTO 객체를 반환하여, 닉네임 정보를 클라이언트에 전달합니다.
+	// 로그인 기능
+    // boolean 대신 UserDTO 객체를 반환하여, 닉네임 정보를 클라이언트에 전달
 	public UserDTO login(String id, String pw) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -71,11 +71,11 @@ public class UserDAO {
 			rs = pstmt.executeQuery(); 
 			
 			if (rs.next()) {
-                // 로그인 성공! 조회된 정보를 DTO에 담습니다.
+                // 로그인 성공 -> 조회된 정보를 DTO에 담기
                 loggedInUser = new UserDTO();
                 loggedInUser.setId(rs.getString("id"));
                 loggedInUser.setPw(rs.getString("password")); // 보안상 PW는 안 보내는 것이 좋으나 통일성을 위해 포함
-                loggedInUser.setName(rs.getString("name"));     // [핵심] 닉네임(name)을 담음
+                loggedInUser.setName(rs.getString("name"));     // 닉네임(name)을 담음
                 loggedInUser.setPhone(rs.getString("phone"));
                 
 				System.out.println("[DB] 로그인 성공! 사용자명: " + loggedInUser.getName());
