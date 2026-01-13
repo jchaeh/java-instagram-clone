@@ -4,8 +4,8 @@ import java.io.*;
 import java.net.Socket;
 import java.util.Vector;
 import com.jstargram.common.dto.UserDTO;
-import com.jstargram.common.dto.ChatMessage; // [추가] 채팅 DTO
-import com.jstargram.common.dto.PresenceInfo; // [추가] 상태 DTO
+import com.jstargram.common.dto.ChatMessage; // 채팅 DTO
+import com.jstargram.common.dto.PresenceInfo; // 상태 DTO
 import com.jstargram.server.dao.UserDAO;
 
 public class ClientHandler extends Thread {
@@ -44,13 +44,13 @@ public class ClientHandler extends Thread {
                 	System.out.println("[방송 요청] " + msg);
                 	handleRealtimeMessage(msg);
                 }
-                // 3. [추가] 채팅 메시지 (ChatMessage) -> 모두에게 방송
+                // 3. 채팅 메시지 (ChatMessage) -> 모두에게 방송
                 else if (obj instanceof ChatMessage) {
                     ChatMessage chatMsg = (ChatMessage) obj;
                     System.out.println("[채팅] " + chatMsg.getSenderName() + ": " + chatMsg.getContent());
                     broadcast(chatMsg); // 객체 통째로 방송
                 }
-                // 4. [추가] 접속자 상태/위치 (PresenceInfo) -> 모두에게 방송
+                // 4. 접속자 상태/위치 (PresenceInfo) -> 모두에게 방송
                 else if (obj instanceof PresenceInfo) {
                     PresenceInfo info = (PresenceInfo) obj;
                     broadcast(info); // 객체 통째로 방송
@@ -62,7 +62,7 @@ public class ClientHandler extends Thread {
         }
     }
     
-    // [수정] String뿐만 아니라 모든 Object를 방송할 수 있도록 변경
+    // String뿐만 아니라 모든 Object를 방송할 수 있도록 함
     public void broadcast(Object msg) {
     	for(ClientHandler client : allClients) {
     		try {
