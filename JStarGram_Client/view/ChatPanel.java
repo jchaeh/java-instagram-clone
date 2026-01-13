@@ -1,6 +1,6 @@
 package com.jstargram.client.view;
 
-import com.jstargram.client.network.ClientService; // [수정] ClientService import
+import com.jstargram.client.network.ClientService;
 import javax.swing.*;
 import java.awt.*;
 
@@ -12,14 +12,12 @@ public class ChatPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 private final String roomId;
 
-// [수정] ChatClient 대신 ClientService 타입으로 변경
 private final ClientService client; 
 
 private JTextArea chatArea;
 private JTextField inputField;
 private JButton sendButton;
 
-// [수정] 생성자 인자를 ClientService 타입으로 변경
 public ChatPanel(String roomId, ClientService client) {
    this.roomId = roomId;
    this.client = client;
@@ -51,7 +49,7 @@ private void sendCurrentMessage() {
    String text = inputField.getText().trim();
    if (text.isEmpty()) return;
 
-   // [수정] ClientService의 통합된 sendChatMessage 메소드 호출
+   // ClientService의 통합된 sendChatMessage 메소드 호출
    client.sendChatMessage(roomId, text);
    
    inputField.setText("");
