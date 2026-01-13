@@ -71,7 +71,7 @@ public class WritePostUI extends JDialog {
                 return;
             }
             
-            // [핵심 수정] 이미지 경로가 비어있으면 "EMPTY"를 넣어 포맷을 강제합니다.
+            // 이미지 경로가 비어있으면 "EMPTY"를 넣어 포맷을 강제
             String imagePathToSend = selectedFilePath.isEmpty() ? "EMPTY" : selectedFilePath;
 
             // 서버로 전송 요청! (POST|작성자ID|닉네임|내용|이미지경로)
